@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>  
+        div {  
+          border: 10px solid #ff1493;  
+          padding-left: 35px;  
+          /* background-color: yellow;   */
+        }  
+        table,
+        th,
+        td {
+            border: 0.2px solid #ff1493;
+        }
+    </style>  
+</head>
+<body>
+    <div>  
+    <h1>Admin Dashboard</h1>
+
+    <a href="{{ url_for('admin.add_movie') }}">Add New Movie</a>
+</br></br>
+    
+    <!-- Table to display movies -->
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>IMDB ID</th>
+                <th>Title</th>
+                <th>Popularity</th>
+                <th>Budget</th>
+                <th>Revenue</th>
+                <th>Release Date</th>
+                <th>Average Vote</th>
+                <!-- Add other columns here as needed -->
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ movie[0] }}</td> <!-- Assuming the first column is ID -->
+                <td>{{ movie[1] }}</td>
+                <td>{{ movie[5] }}</td>
+                <td>{{ movie[2] }}</td>
+                <td>{{ movie[3] }}</td> <!-- Assuming the first column is ID -->
+                <td>{{ movie[4] }}</td>
+                <td>{{ movie[10] }}</td> <!-- Assuming the first column is ID -->
+                <td>{{ movie[12] }}</td>
+                <!-- Add other fields -->
+                <td>
+                    <a href="{{ url_for('admin.edit_movie', id=movie[0]) }}">Edit</a> |
+                    <a href="{{ url_for('admin.delete_movie', id=movie[0]) }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+</div> 
+</body>
+</html>

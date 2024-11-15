@@ -1,0 +1,9 @@
+psycopg2-binary
+Flask
+dash
+dash-bootstrap-components
+pandas
+cryptography
+SQLAlchemy
+plotly
+statsmodels

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Signup</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title signup">Signup</div>
+        </div>
+        <div class="form-inner">
+            <form action="{{ url_for('signup_post') }}" class="signup" method="POST">
+                <!-- <div class="field">
+                    <input type="text" placeholder="User Name" name="username" required>
+                </div> -->
+                <div class="field">
+                    <input type="text" placeholder="E-Mail" name="email" 
+                        data-validate="Valid email is required: ex@abc.xyz" required>
+                </div>
+                <div class="field">
+                    <input type="date" placeholder="Date of Birth" name="dob" required>
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Confirm Password" name="conf_password" required>
+                </div>
+                <!-- Dropdown for access level -->
+                <div class="field">
+                    <label for="access">Access Level (for testing purpose only):</label>
+                    <select id="access" name="access_id" required>
+                        <option value="User">User</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Signup">
+                </div>
+            </form>
+            <div class="center">Are you a member? <a href="/">Login now</a></div>
+        </div>
+    </div>
+</body>
+
+</html>

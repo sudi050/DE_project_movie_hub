@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Movie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff1493;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align at the top */
+            margin: 0;
+            padding: 20px;
+            overflow-y: auto; /* Enable scrolling if needed */
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            width: 800px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 40 40 40px rgba(0,0,0,0);
+            max-height: 95vh; /* Limit height and allow overflow */
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <h1>Add New Movie</h1>
+
+        <label for="id">ID:</label>
+        <input type="text" name="id" id="id" required>
+
+        <label for="imdb_id">IMDB ID:</label>
+        <input type="text" name="imdb_id" id="imdb_id" required>
+
+        <label for="popularity">Popularity:</label>
+        <input type="text" name="popularity" id="popularity" required>
+
+        <label for="budget">Budget:</label>
+        <input type="text" name="budget" id="budget">
+
+        <label for="revenue">Revenue:</label>
+        <input type="text" name="revenue" id="revenue">
+
+        <label for="original_title">Original Title:</label>
+        <input type="text" name="original_title" id="original_title" required>
+
+        <label for="homepage">Homepage:</label>
+        <input type="text" name="homepage" id="homepage">
+
+        <label for="tagline">Tagline:</label>
+        <input type="text" name="tagline" id="tagline">
+
+        <label for="overview">Overview:</label>
+        <textarea name="overview" id="overview"></textarea>
+
+        <label for="runtime">Runtime (in minutes):</label>
+        <input type="text" name="runtime" id="runtime">
+
+        <label for="release_date">Release Date:</label>
+        <input type="date" name="release_date" id="release_date">
+
+        <label for="vote_count">Vote Count:</label>
+        <input type="text" name="vote_count" id="vote_count">
+
+        <label for="vote_average">Vote Average:</label>
+        <input type="text" name="vote_average" id="vote_average">
+
+        <label for="release_year">Release Year:</label>
+        <input type="text" name="release_year" id="release_year">
+
+        <label for="budget_adj">Adjusted Budget:</label>
+        <input type="text" name="budget_adj" id="budget_adj">
+
+        <label for="revenue_adj">Adjusted Revenue:</label>
+        <input type="text" name="revenue_adj" id="revenue_adj">
+
+        <!-- Multi-value fields without Add button -->
+        <label for="production_companies">Production Companies (comma-separated):</label>
+        <input type="text" name="production_companies" placeholder="Company1, Company2, ...">
+
+        <label for="directors">Directors (comma-separated):</label>
+        <input type="text" name="directors" placeholder="Director1, Director2, ...">
+
+        <label for="genres">Genres (comma-separated):</label>
+        <input type="text" name="genres" placeholder="Genre1, Genre2, ...">
+
+        <label for="actors">Actors (comma-separated):</label>
+        <input type="text" name="actors" placeholder="Actor1, Actor2, ...">
+
+        <label for="keywords">Keywords (comma-separated):</label>
+        <input type="text" name="keywords" placeholder="Keyword1, Keyword2, ...">
+
+        <button type="submit">Add Movie</button>
+        <a href="{{ url_for('admin.admin_dashboard') }}">Back to Dashboard</a>
+    </form>
+</body>
+</html>
